@@ -1,4 +1,4 @@
-MATRIX FOCUS INTERCEPTOR — MV3 v1.4.0
+MATRIX FOCUS INTERCEPTOR — MV3 v1
 =====================================
 
 FILES

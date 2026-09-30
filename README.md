@@ -1,6 +1,6 @@
-# Zenith 🚀
+# Matrix 🚀
 
-Zenith is a distraction-blocking Chrome extension designed to introduce intentional friction to your browsing habits. Instead of just hard-blocking sites, Zenith gives you creative ways to earn your screen time.
+Matrix is a distraction-blocking Chrome extension designed to introduce intentional friction to your browsing habits. Instead of just hard-blocking sites, Matrix gives you creative ways to earn your screen time.
 
 ## ✨ Features
 

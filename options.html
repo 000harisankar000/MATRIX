@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Matrix Focus Interceptor — Matrix Panel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body class="dashboard-shell">
+  <div class="matrix-scanlines" aria-hidden="true"></div>
+  <main class="dashboard" aria-labelledby="panel-title">
+    <header class="dashboard-header">
+      <div class="title-wrap">
+        <p class="eyebrow">MATRIX // CONTROL TERMINAL</p>
+        <h1 id="panel-title">Focus Interceptor Matrix Panel</h1>
+        <p class="muted header-copy">Define the websites that should be routed into your local focus perimeter.</p>
+      </div>
+      <div class="header-state">
+        <span class="section-kicker">MASTER STATUS</span>
+        <span id="header-status" class="large-status">ONLINE</span>
+      </div>
+    </header>
+
+    <section class="dashboard-grid">
+      <article class="panel-card global-card">
+        <div class="card-heading">
+          <div>
+            <p class="section-kicker">01 // GLOBAL WARNING</p>
+            <h2>Default terminal message</h2>
+          </div>
+          <span class="data-pill">FALLBACK TEXT</span>
+        </div>
+        <label for="global-warning">Message shown by Text Warning Mode when a site does not have its own custom warning.</label>
+        <textarea id="global-warning" rows="8" maxlength="4000" spellcheck="true" placeholder="Enter your focus warning..."></textarea>
+        <div class="field-meta"><span>UP TO 4000 CHARACTERS</span><span id="global-count">0</span></div>
+      </article>
+
+      <article class="panel-card rule-card">
+        <div class="card-heading">
+          <div>
+            <p class="section-kicker">02 // RULE INJECTION</p>
+            <h2>Register a blocked domain</h2>
+          </div>
+          <span class="data-pill">DYNAMIC DNR</span>
+        </div>
+
+        <form id="site-form" novalidate>
+          <div class="form-grid">
+            <div class="field-group">
+              <label for="domain-input">TARGET DOMAIN</label>
+              <input id="domain-input" name="domain" autocomplete="off" placeholder="youtube.com" required>
+              <p class="field-hint">Root domains automatically cover their subdomains.</p>
+            </div>
+            <div class="field-group">
+              <label for="mode-input">ENFORCEMENT MODE</label>
+              <select id="mode-input" name="mode">
+                <option value="text">Text Warning Mode</option>
+                <option value="snake">Snake Game Mode</option>
+              </select>
+              <p class="field-hint">Snake mode unlocks the destination after 10 points.</p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="site-warning">SITE-SPECIFIC WARNING <span class="muted">(optional)</span></label>
+            <textarea id="site-warning" rows="5" maxlength="4000" placeholder="Leave blank to use the global warning."></textarea>
+            <p class="field-hint">This message overrides the global warning for this domain in Text Warning Mode.</p>
+          </div>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">INJECT BLOCK RULE</button>
+            <button id="clear-site-warning" class="secondary-button" type="button">USE GLOBAL DEFAULT</button>
+          </div>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="panel-card allocations-card" aria-labelledby="allocations-title">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">03 // ACTIVE ALLOCATIONS</p>
+          <h2 id="allocations-title">Blocked destination matrix</h2>
+        </div>
+        <span id="rule-count" class="data-pill">0 ACTIVE</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">DOMAIN</th>
+              <th scope="col">MODE</th>
+              <th scope="col">WARNING SOURCE</th>
+              <th scope="col" class="action-col">ACTION</th>
+            </tr>
+          </thead>
+          <tbody id="site-table-body"></tbody>
+        </table>
+        <div id="empty-state" class="empty-state">NO ACTIVE BLOCK ALLOCATIONS — THE MATRIX IS OPEN.</div>
+      </div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <span>LOCAL STORAGE ONLY • NO REMOTE SERVICES • NO EXTERNAL ASSETS</span>
+      <span id="incognito-hint">INCOGNITO ACCESS: CHECKING</span>
+    </footer>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+</html>

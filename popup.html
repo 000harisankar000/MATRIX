@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Matrix Focus Interceptor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="popup-shell">
+  <main class="popup-panel" aria-labelledby="popup-title">
+    <header class="popup-header">
+      <div class="brand-mark" aria-hidden="true">M</div>
+      <div>
+        <p class="eyebrow">MATRIX // FOCUS CORE</p>
+        <h1 id="popup-title">Focus Interceptor</h1>
+      </div>
+      <span id="status-chip" class="status-chip" aria-live="polite">SYNC</span>
+    </header>
+
+    <section class="toggle-card" aria-label="Master extension control">
+      <div>
+        <span class="section-kicker">MASTER CONTROL</span>
+        <strong id="master-label">BLOCKING ENABLED</strong>
+        <p class="muted" id="master-description">Network filters are active.</p>
+      </div>
+      <label class="switch" aria-label="Enable or disable website interception">
+        <input id="master-toggle" type="checkbox">
+        <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+      </label>
+    </section>
+
+    <button id="open-options" class="primary-button" type="button">
+      <span>OPEN MATRIX PANEL</span><span aria-hidden="true">↗</span>
+    </button>
+
+    <footer class="popup-footer">
+      <span>MV3 / LOCAL / NO EXTERNAL ASSETS</span>
+      <span id="incognito-status">INCOGNITO: CHECKING</span>
+    </footer>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

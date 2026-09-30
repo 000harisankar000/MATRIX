@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ACCESS BLOCKED</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="block.css">
+</head>
+<body class="block-shell">
+  <canvas id="matrix-rain" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <main class="block-page" aria-labelledby="block-title">
+    <header class="block-header">
+      <div>
+        <p class="eyebrow">MATRIX // NETWORK INTERCEPT</p>
+        <h1 id="block-title">ACCESS BLOCKED</h1>
+      </div>
+      <div class="target-readout">
+        <span class="section-kicker">TARGET</span>
+        <code id="target-domain">unknown</code>
+      </div>
+    </header>
+
+    <section id="text-mode" class="mode-panel text-panel" hidden>
+      <div class="terminal-topbar">
+        <span><i class="terminal-dot"></i><i class="terminal-dot"></i><i class="terminal-dot"></i></span>
+        <span id="terminal-path">/focus/terminal</span>
+        <span id="terminal-state">HARD BLOCK</span>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-prompt">ROOT@MATRIX:~$ ACCESS_REQUEST --DENIED</p>
+        <pre id="warning-output" class="warning-output" aria-live="polite"></pre>
+        <p class="terminal-note">NO PROCEED ACTION IS AVAILABLE. CLOSE THIS TAB TO EXIT.</p>
+      </div>
+    </section>
+
+    <section id="snake-mode" class="mode-panel snake-panel" hidden>
+      <div class="snake-intro">
+        <div>
+          <p class="section-kicker">CHALLENGE PROTOCOL</p>
+          <h2>Snake unlock sequence</h2>
+          <p class="muted">Collect red food nodes. Score 10 points to authorize one destination handoff.</p>
+        </div>
+        <div class="score-box" aria-live="polite">
+          <span>SCORE</span>
+          <strong id="score">0 / 10</strong>
+        </div>
+      </div>
+
+      <div class="game-frame">
+        <canvas id="snake-canvas" width="560" height="360" tabindex="0" aria-label="Snake game. Use the arrow keys to move the snake."></canvas>
+        <div id="game-overlay" class="game-overlay" hidden>
+          <div class="unlock-dialog">
+            <span class="section-kicker">PROTOCOL COMPLETE</span>
+            <strong>ACCESS AUTHORIZED</strong>
+            <p>Destination handoff unlocked for this blocked domain.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="snake-actions">
+        <div class="snake-action-group">
+          <button id="new-tab-close" class="secondary-button action-button" type="button">
+            <span class="button-icon" aria-hidden="true">↩</span>
+            <span>EXIT TO NEW TAB</span>
+          </button>
+          <button id="proceed-button" class="primary-button action-button proceed-action" type="button" hidden>
+            <span>PROCEED TO DESTINATION</span>
+            <span class="button-icon" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <span id="game-status" class="game-status">USE ARROW KEYS TO MOVE</span>
+      </div>
+    </section>
+
+    <footer class="block-footer">
+      <span>HARD BLOCK // LOCAL EXTENSION PAGE</span>
+      <span id="mode-readout">MODE: —</span>
+    </footer>
+  </main>
+
+  <script src="block.js"></script>
+</body>
+</html>

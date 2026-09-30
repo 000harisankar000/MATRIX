@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Block",
+  "version": "1.4.0",
+  "description": "A self-contained cyberpunk website blocker with hard text blocks, Snake unlock challenge, and Incognito fallback.",
+  "minimum_chrome_version": "102",
+  "incognito": "split",
+  "permissions": [
+    "storage",
+    "alarms",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Matrix Focus Interceptor",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "block.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "incognito-block.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

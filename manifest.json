@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Block",
+  "name": "Zenith",
   "version": "1.4.0",
   "description": "A self-contained cyberpunk website blocker with hard text blocks, Snake unlock challenge, and Incognito fallback.",
   "minimum_chrome_version": "102",
